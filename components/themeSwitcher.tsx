@@ -10,6 +10,7 @@ const FloatingActionButton = styled.button`
   position: fixed;
   bottom: 0;
   right: 0;
+  z-index: 2;
 
   display: flex;
   align-items: center;

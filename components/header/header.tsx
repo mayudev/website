@@ -1,11 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import {
-  Accent,
-  AccentPrimary,
-  AccentSecondary,
-  Foreground,
-  ForegroundSecondary,
-} from "../../lib/themes";
+import styled, { css, keyframes } from "styled-components";
+import { AccentPrimary, Foreground, NarrowBreakpoint } from "../../lib/themes";
 import { Avatar } from "./avatar";
 import Links from "./links";
 
@@ -29,46 +23,62 @@ const blink = keyframes`
   to { border-color: var(--fg); }
 `;
 
-const Heading = styled.h1`
+const Heading = styled.h1<{
+  blink: boolean;
+}>`
   font-size: 2em;
   overflow: hidden;
   border-right: 0.3rem solid ${Foreground};
   line-height: 2rem;
   padding-right: 3px;
   margin-bottom: 0.5rem;
-  width: 0;
   white-space: nowrap;
-  animation: ${type} 0.2s steps(4, end) forwards, ${blink} 0.4s alternate infinite;
+
+  ${(props) =>
+    props.blink
+      ? css`
+          width: 0;
+          animation: ${type} 0.2s steps(4, end) forwards, ${blink} 0.4s alternate infinite;
+        `
+      : ""};
 `;
 
-const Subheading = styled.h2`
+const Subheading = styled.h2<{
+  small: boolean;
+}>`
   color: ${AccentPrimary};
   margin: 0 0 1rem 0;
   border-bottom: 1px solid ${AccentPrimary};
-  font-size: 1.2rem;
+  font-size: ${(props) => (props.small ? "1rem" : "1.2rem")};
   line-height: 1.5;
 `;
 
 const Split = styled.div`
   display: flex;
-  align-items: center;
+
   justify-content: space-between;
+
+  @media (max-width: ${NarrowBreakpoint}px) {
+    flex-direction: column;
+  }
 `;
 
-export default function Header() {
+export default function Header({ post }: { post: boolean }) {
+  const avatarSize = post ? 64 : 100;
+
   return (
     <Container>
-      <span style={{ height: 100 }}>
-        <Avatar />
+      <span style={{ height: avatarSize }}>
+        <Avatar size={avatarSize} />
       </span>
 
       <Split>
         <div>
           <HeadingContainer>
-            <Heading>Mayu</Heading>
+            <Heading blink={!post}>Mayu</Heading>
           </HeadingContainer>
 
-          <Subheading>hobbyist webdev</Subheading>
+          <Subheading small={post}>hobbyist web developer</Subheading>
         </div>
         <div>
           <Links />

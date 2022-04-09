@@ -6,22 +6,25 @@ import ThemeSwitcher from "./themeSwitcher";
 
 type Props = {
   children: React.ReactNode;
+  post: boolean;
 };
 
-const Container = styled.div`
-  max-width: 48rem;
+const Container = styled.div<{
+  post: boolean;
+}>`
+  width: min(48rem, 95vw);
   padding: 0 1rem;
-  margin: 33vh auto 3rem auto;
+  margin: ${(props) => (props.post ? "20vh" : "33vh")} auto 3rem auto;
 `;
 
-export default function Layout({ children }: Props) {
+export default function Layout({ children, post }: Props) {
   return (
-    <Container>
+    <Container post={post}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <Header post={post} />
 
       <ThemeSwitcher />
 

@@ -2,10 +2,15 @@ import { faHome, faNewspaper } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import styled from "styled-components";
-import { AccentSecondary } from "../../lib/themes";
+import { AccentSecondary, NarrowBreakpoint } from "../../lib/themes";
 
 const Container = styled.div`
   display: flex;
+
+  @media (max-width: ${NarrowBreakpoint}px) {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
 `;
 
 const LinkContainer = styled.a`
