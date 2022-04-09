@@ -47,6 +47,8 @@ export default function Post(props: Props) {
     <Layout post>
       <Head>
         <title>{props.title}</title>
+        <meta name="title" content={props.title} />
+        <meta name="description" content={props.summary || "Blog post"} />
       </Head>
 
       <Article>

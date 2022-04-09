@@ -34,7 +34,12 @@ export default function Layout({ children, post }: Props) {
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <title>Mayu</title>
+          <meta name="title" content="Mayu" />
+          <meta name="author" content="Mayu" />
           <meta name="description" content="Mayu's website" />
+
+          <meta property="og:site_name" content="Mayu" />
+          <meta property="og:type" content="website" />
         </Head>
         <Header post={post!} />
         <ThemeSwitcher />
