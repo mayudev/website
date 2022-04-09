@@ -1,6 +1,6 @@
 import { faPalette } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import { ThemeContext } from "../lib/themeContext";
 import { Accent } from "../lib/themes";

@@ -1,7 +1,5 @@
 import theme from "styled-theming";
 
-// TODO unbreak light theme :)
-
 export const NarrowBreakpoint = 400;
 
 export const BackgroundColor = theme("mode", {

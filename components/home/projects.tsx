@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { IProject } from "../../lib/projects";
-import { NarrowBreakpoint } from "../../lib/themes";
 import Project from "./project";
 
 const Grid = styled.div`

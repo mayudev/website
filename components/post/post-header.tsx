@@ -1,10 +1,3 @@
-import {
-  faArrowLeft,
-  faChevronLeft,
-  faNewspaper,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
 import styled from "styled-components";
 import { Metadata } from "../../lib/posts";
 import { AccentPrimary, AccentSecondary } from "../../lib/themes";

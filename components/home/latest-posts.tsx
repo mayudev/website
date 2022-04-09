@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { PostData } from "../../lib/posts";
-import { AccentSecondary, BackgroundColor, Foreground } from "../../lib/themes";
 import NiceLink from "./nice-link";
 
 const Container = styled.div`

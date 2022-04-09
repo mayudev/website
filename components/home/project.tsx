@@ -1,7 +1,6 @@
-import Image from "next/image";
 import styled from "styled-components";
 import { IProject } from "../../lib/projects";
-import { AccentPrimary, AccentSecondary } from "../../lib/themes";
+import { AccentSecondary } from "../../lib/themes";
 
 const Name = styled.h2`
   border-left: 2px solid ${AccentSecondary};
