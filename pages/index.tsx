@@ -1,32 +1,74 @@
-import type { NextPage } from "next";
-import Head from "next/head";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { GetStaticProps } from "next";
+import Heading from "../components/home/heading";
+import LatestPosts from "../components/home/latest-posts";
+import NiceLink, { NiceLinkText } from "../components/home/nice-link";
+import Projects from "../components/home/projects";
 import Layout from "../components/layout";
+import { getSortedPosts, PostData } from "../lib/posts";
+import { IProject, projects } from "../lib/projects";
 
-const Home: NextPage = () => {
+type Props = {
+  posts: PostData[];
+  projects: IProject[];
+};
+
+export default function Home({ posts, projects }: Props) {
   return (
     <Layout>
-      <Head>
-        <title>Mayu</title>
-        <meta name="description" content="Mayu's website" />
-      </Head>
-
       <article>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et velit id odio
-        placerat dictum. Suspendisse ex erat, malesuada eu tincidunt sit amet, eleifend in
-        nunc. Vivamus lobortis, tortor nec ultricies mollis, nisl tellus euismod risus,
-        sed porttitor massa est sed erat. In nec justo elit. Nam pellentesque nibh at
-        laoreet venenatis. Mauris quam ex, egestas et leo non, dignissim rutrum nunc. Sed
-        ultrices blandit nulla, non iaculis dolor vestibulum vel. Nunc dignissim suscipit
-        nunc nec ultrices. In lobortis lectus volutpat, egestas lectus vel, pellentesque
-        felis. Praesent ullamcorper justo sapien, quis bibendum nisl consequat et. Mauris
-        lacinia massa quam, a sodales justo bibendum ac. Maecenas lobortis, libero nec
-        maximus imperdiet, augue velit rhoncus nisi, at convallis purus lectus in quam.
-        Nulla viverra ipsum porta dui porta, eu finibus nulla laoreet. Nam consectetur
-        nisl id orci feugiat, a volutpat magna dignissim. Curabitur eros lectus, cursus
-        finibus dolor nec, tincidunt euismod nunc.
+        <section>
+          <p>{`Hi! I'm Mayu, an aspiring web developer.`}</p>
+
+          <p>{`Web development is my main interest, but I also want to make mobile apps, and maybe some console tools.`}</p>
+
+          <p>
+            My favorite languages are <b>TypeScript</b> and <b>Go</b>, but I&apos;m
+            currently learning Rust, and I can&apos;t wait to pick up Flutter soon.
+          </p>
+
+          <p>{`I'm something of a Linux enthusiast, currently using Arch Linux with Sway (wayland!). I don't really like saying 'i use arch btw', though.`}</p>
+        </section>
+        <section>
+          <Heading>socials</Heading>
+          <p>{`I don't use social media much.`}</p>
+          <NiceLink
+            withIcon
+            href="https://github.com/mayudev"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+            <NiceLinkText>GitHub</NiceLinkText>
+          </NiceLink>
+        </section>
+
+        <section>
+          <Heading>projects</Heading>
+          <p>You can see more stuff on my GitHub.</p>
+          <Projects projects={projects} />
+        </section>
+
+        <section>
+          <Heading>latest posts</Heading>
+          <LatestPosts posts={posts} />
+        </section>
       </article>
     </Layout>
   );
-};
+}
 
-export default Home;
+export const getStaticProps: GetStaticProps = () => {
+  const posts = getSortedPosts();
+
+  // Leave only 5 latest posts
+  posts.splice(5);
+
+  return {
+    props: {
+      posts,
+      projects,
+    },
+  };
+};

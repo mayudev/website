@@ -26,10 +26,10 @@ const blink = keyframes`
 const Heading = styled.h1<{
   blink: boolean;
 }>`
-  font-size: 2em;
+  font-size: 2rem;
   overflow: hidden;
   border-right: 0.3rem solid ${Foreground};
-  line-height: 2rem;
+  line-height: 2.1rem;
   padding-right: 3px;
   margin-bottom: 0.5rem;
   white-space: nowrap;

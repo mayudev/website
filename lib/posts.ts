@@ -18,7 +18,11 @@ export interface Metadata {
   coverImage?: string;
 
   // Publish date
-  date?: string;
+  date: string;
+}
+
+export interface PostData extends Metadata {
+  slug: string;
 }
 
 export async function getPost(slug: string) {
@@ -54,5 +58,36 @@ export function getAllPosts() {
         slug: filename.replace(/\.md$/, ""),
       },
     };
+  });
+}
+
+export function getSortedPosts() {
+  const filenames = readdirSync(postsDirectory);
+
+  const postsData = filenames.map((filename) => {
+    // Figure out slug from filename
+    const slug = filename.replace(/\.md$/, "");
+
+    // Read file
+    const fullpath = join(postsDirectory, filename);
+    const contents = readFileSync(fullpath);
+
+    // Parse matter
+    const { data } = matter(contents);
+
+    return {
+      slug,
+      ...(data as Metadata),
+    };
+  });
+
+  return postsData.sort(({ date: a }, { date: b }) => {
+    if (a < b) {
+      return 1;
+    } else if (a > b) {
+      return -1;
+    } else {
+      return 0;
+    }
   });
 }

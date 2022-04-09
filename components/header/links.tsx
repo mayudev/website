@@ -47,7 +47,7 @@ export default function Links() {
         </LinkContainer>
       </Link>
 
-      <Link href="/" passHref>
+      <Link href="/posts" passHref>
         <LinkContainer>
           <span>
             <FontAwesomeIcon icon={faNewspaper} />

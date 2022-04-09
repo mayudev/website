@@ -1,0 +1,14 @@
+---
+title: "My thoughts after two months of using Wayland excusively"
+summary: "This is my first post!"
+coverImage: "/assets/blog/first-post/wayland.png"
+date: "2022-04-08T18:37:01.613Z"
+---
+
+Pellentesque consequat mi tellus. Integer imperdiet quam vitae cursus auctor. Sed ligula est, placerat at dolor non, sodales auctor augue. Vestibulum a convallis massa, convallis fringilla odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin erat risus, semper ac placerat non, sagittis eu nibh. Aliquam tincidunt, mauris ac finibus sollicitudin, justo arcu luctus libero, sit amet finibus quam justo id eros. Phasellus vitae ante ultricies, condimentum sapien ut, maximus mi. Cras tellus metus, rhoncus sed diam sed, aliquam dignissim ligula. Curabitur in commodo metus. Sed iaculis quam justo, ut dictum eros semper suscipit. Sed vitae tincidunt metus. Morbi at massa consequat, dapibus orci eleifend, facilisis metus. Morbi ornare, libero vitae fermentum pulvinar, odio turpis interdum libero, id lobortis turpis tortor vitae metus.
+
+Quisque ac aliquet justo, a pulvinar risus. Curabitur lorem tortor, pellentesque ac sapien quis, tristique venenatis lacus. Mauris posuere velit mi, quis hendrerit eros finibus id. Nam pharetra vulputate hendrerit. Praesent est diam, pulvinar a nisi vel, bibendum congue odio. Maecenas consequat leo sed arcu pellentesque consectetur. Pellentesque interdum magna ut tempus ultrices. Proin massa metus, aliquam sit amet lacus nec, consequat interdum metus. Maecenas feugiat nisl eget risus ultrices, a convallis lorem convallis.
+
+Duis quis pharetra lorem, at ultrices lorem. Cras porta nibh quis odio consectetur, nec placerat quam imperdiet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam sagittis finibus leo eget varius. Suspendisse non semper metus. Etiam sem justo, feugiat id consequat ut, ornare sit amet odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur fermentum mattis mauris, ut posuere leo faucibus eget. Aliquam maximus finibus sodales. Nunc laoreet libero sit amet sapien accumsan varius. Maecenas venenatis ipsum in purus dictum dictum. Sed congue dolor tincidunt varius lobortis. Maecenas finibus lobortis elit vitae luctus.
+
+Aenean ante enim, sagittis varius tempus non, pellentesque at nibh. Nam tempus nulla sed luctus tristique. Suspendisse ullamcorper erat sit amet sapien semper ornare. Suspendisse mauris ligula, tincidunt malesuada orci sed, pellentesque convallis magna. Mauris malesuada euismod malesuada. Vestibulum a nunc sed orci ultricies venenatis. Vestibulum sit amet ex ut odio vestibulum lobortis. Mauris fermentum nulla vel felis maximus, ultrices tristique velit rutrum. 

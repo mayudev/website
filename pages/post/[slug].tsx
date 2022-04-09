@@ -4,10 +4,43 @@ import Layout from "../../components/layout";
 import { getAllPosts, getPost, Metadata } from "../../lib/posts";
 import { ParsedUrlQuery } from "querystring";
 import PostHeader from "../../components/post/post-header";
+import styled from "styled-components";
+import { AccentPrimary, AccentSecondary } from "../../lib/themes";
 
 interface Props extends Metadata {
   content: string;
 }
+
+const Summary = styled.p`
+  font-weight: bolder;
+`;
+
+// Styling for article
+const Article = styled.article`
+  h1 {
+    font-size: 2rem;
+  }
+
+  h1,
+  h2 {
+    padding-left: 1rem;
+
+    color: ${AccentPrimary};
+    border-left: 3px solid ${AccentPrimary};
+  }
+
+  h3,
+  h4 {
+    padding-left: 1rem;
+
+    color: ${AccentSecondary};
+    border-left: 3px solid ${AccentSecondary};
+  }
+
+  ul {
+    color: ${AccentSecondary};
+  }
+`;
 
 export default function Post(props: Props) {
   return (
@@ -16,12 +49,14 @@ export default function Post(props: Props) {
         <title>{props.title}</title>
       </Head>
 
-      <article>
+      <Article>
         <PostHeader {...props} />
+
+        <Summary>{props.summary}</Summary>
 
         {/* We're using global css this time so we can style the post contents */}
         <div className="article" dangerouslySetInnerHTML={{ __html: props.content }} />
-      </article>
+      </Article>
     </Layout>
   );
 }
