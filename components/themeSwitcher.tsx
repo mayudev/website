@@ -1,6 +1,6 @@
 import { faPalette } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { ThemeContext } from "../lib/themeContext";
 import { Accent } from "../lib/themes";
@@ -36,8 +36,13 @@ export default function ThemeSwitcher() {
   const [theme, setTheme] = useContext(ThemeContext);
 
   const toggleTheme = () => {
-    if (theme === "dark") setTheme("light");
-    else setTheme("dark");
+    if (theme === "dark") {
+      setTheme("light");
+      localStorage.setItem("theme", "light");
+    } else {
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
+    }
   };
 
   return (

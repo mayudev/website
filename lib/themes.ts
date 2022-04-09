@@ -15,7 +15,7 @@ export const Foreground = theme("mode", {
 });
 
 export const ForegroundSecondary = theme("mode", {
-  light: "#493f5e",
+  light: "#352d2f",
   dark: "#88a2a8", // #728188
 });
 
@@ -25,11 +25,11 @@ export const Accent = theme("mode", {
 });
 
 export const AccentPrimary = theme("mode", {
-  light: "#ecc9d4",
+  light: "#352d2f",
   dark: "#ecc9d4",
 });
 
 export const AccentSecondary = theme("mode", {
-  light: "#ece2c9",
+  light: "#574742",
   dark: "#ece2c9",
 });

@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ThemeMode, ThemeContext } from "../lib/themeContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // Font Awesome fix
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -24,6 +24,12 @@ const GlobalStyle = createGlobalStyle`
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [themeContext, setThemeContext] = useState<ThemeMode>("dark");
+
+  useEffect(() => {
+    const currentTheme = localStorage.getItem("theme");
+
+    if (currentTheme && currentTheme === "light") setThemeContext("light");
+  }, []);
 
   return (
     <ThemeContext.Provider value={[themeContext, setThemeContext]}>
