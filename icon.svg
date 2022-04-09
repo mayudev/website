@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="/home/mya/icon.png"
+   inkscape:export-xdpi="398.90268"
+   inkscape:export-ydpi="398.90268"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="3.4368881"
+     inkscape:cx="229.56813"
+     inkscape:cy="425.82125"
+     inkscape:window-width="1908"
+     inkscape:window-height="1031"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect24148"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="IF,0,0,1,0,1.8520833,0,30 @ IF,0,0,1,0,1.8520833,0,30 @ IF,0,0,1,0,1.8520833,0,30 @ IF,0,0,1,0,1.8520833,0,30"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="7"
+       chamfer_steps="30"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect24146"
+       is_visible="true"
+       lpeversion="1"
+       steps="9"
+       threshold="0.002"
+       smooth_angles="0"
+       helper_size="5"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
+    <inkscape:path-effect
+       effect="offset"
+       id="path-effect24144"
+       is_visible="true"
+       lpeversion="1"
+       linejoin_type="miter"
+       unit="mm"
+       offset="0"
+       miter_limit="4"
+       attempt_force_join="false"
+       update_on_knot_move="true" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="font-variation-settings:'wght' 800;fill:#ecc9d4;stroke-width:0.264583"
+       id="rect24044"
+       width="19.102409"
+       height="8.9415016"
+       x="55.178753"
+       y="101.05996"
+       sodipodi:type="rect"
+       inkscape:path-effect="#path-effect24146;#path-effect24148"
+       d="m 57.030836,101.05996 15.398243,0 a 1.8520833,1.8520833 45 0 0 1.852083,1.85208 v 5.23734 a 1.8520833,1.8520833 135 0 0 -1.852083,1.85208 H 57.030836 a 1.8520833,1.8520833 45 0 0 -1.852083,-1.85208 v -5.23734 a 1.8520833,1.8520833 135 0 0 1.852083,-1.85208 z" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#ffffff;stroke-width:0.264583"
+       x="58.385269"
+       y="110.3514"
+       id="text2300"><tspan
+         sodipodi:role="line"
+         id="tspan2298"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;font-family:Cantarell;-inkscape-font-specification:'Cantarell, @wght=800';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 800;fill:#ffffff;stroke-width:0.264583"
+         x="58.385269"
+         y="110.3514">^^</tspan></text>
+  </g>
+</svg>

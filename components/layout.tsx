@@ -32,7 +32,7 @@ export default function Layout({ children, post }: Props) {
     <Page>
       <Container post={post!}>
         <Head>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.png" />
           <title>Mayu</title>
           <meta name="title" content="Mayu" />
           <meta name="author" content="Mayu" />
