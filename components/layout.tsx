@@ -2,7 +2,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import Footer from "./footer";
 import Header from "./header/header";
-import ThemeSwitcher from "./themeSwitcher";
+import ThemeSwitcher from "./theme-switcher";
 
 type Props = {
   children: React.ReactNode;
@@ -24,7 +24,7 @@ const Container = styled.div<{
 }>`
   width: min(48rem, 95vw);
   padding: 0 1rem;
-  margin: ${(props) => (props.post ? "20vh" : "33vh")} auto 1rem auto;
+  margin: 20vh auto 1rem auto;
 `;
 
 export default function Layout({ children, post }: Props) {

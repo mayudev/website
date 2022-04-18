@@ -1,11 +1,11 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { ThemeMode, ThemeContext } from "../lib/themeContext";
+import { ThemeMode, ThemeContext, isTheme } from "../lib/themeContext";
 import { useEffect, useState } from "react";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 // Font Awesome fix
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
 config.autoAddCss = false;
 
 import { BackgroundColor, Foreground } from "../lib/themes";
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
 
-    if (currentTheme && currentTheme === "light") setThemeContext("light");
+    if (currentTheme && isTheme(currentTheme)) setThemeContext(currentTheme);
   }, []);
 
   return (

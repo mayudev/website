@@ -14,7 +14,7 @@ export default function LatestPosts({ posts }: { posts: PostData[] }) {
   return (
     <Container>
       {posts.map((post) => (
-        <Link key={post.slug} href={"/post/" + post.slug} passHref>
+        <Link key={post.slug} href={"/posts/" + post.slug} passHref>
           <NiceLink>{post.title}</NiceLink>
         </Link>
       ))}
