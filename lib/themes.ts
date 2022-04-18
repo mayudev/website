@@ -2,32 +2,39 @@ import theme from "styled-theming";
 
 export const NarrowBreakpoint = 400;
 
+// dark color palette is (catppuccin)[https://github.com/catppuccin/catppuccin]
 export const BackgroundColor = theme("mode", {
   light: "#fcdee9",
-  dark: "#1b1e24",
+  dark: "#1e1e2e",
+  bluishDark: "#1b1e24",
 });
 
 export const Foreground = theme("mode", {
   light: "#2c2638",
-  dark: "#c9e5ec",
+  dark: "#d9e0ee",
+  bluishDark: "#c9e5ec",
 });
 
 export const ForegroundSecondary = theme("mode", {
   light: "#352d2f",
-  dark: "#88a2a8", // #728188
+  dark: "#88a2a8",
+  bluishDark: "#88a2a8",
 });
 
 export const Accent = theme("mode", {
   light: "#eabbcd",
-  dark: "#c9e5ec",
+  dark: "#96cdfb",
+  bluishDark: "#c9e5ec",
 });
 
 export const AccentPrimary = theme("mode", {
   light: "#352d2f",
-  dark: "#ecc9d4",
+  dark: "#f5c2e7",
+  bluishDark: "#ecc9d4",
 });
 
 export const AccentSecondary = theme("mode", {
   light: "#574742",
-  dark: "#ece2c9",
+  dark: "#b5e8e0",
+  bluishDark: "#ece2c9",
 });
