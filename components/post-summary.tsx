@@ -37,7 +37,7 @@ const Summary = styled.div``;
 export default function PostSummary({ post }: Props) {
   return (
     <Container>
-      <Link href={`/post/` + post.slug}>
+      <Link href={`/posts/` + post.slug}>
         <a>
           <Title>{post.title}</Title>
           <PostDate>
