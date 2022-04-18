@@ -28,7 +28,7 @@ export default function Home({ posts, projects }: Props) {
             currently learning Rust, and I can&apos;t wait to pick up Flutter soon.
           </p>
 
-          <p>{`I'm something of a Linux enthusiast, currently using Void Linux with Sway (wayland!). I don't really like saying 'i use arch btw', though.`}</p>
+          <p>{`I'm something of a Linux enthusiast, currently using Void Linux with Sway (wayland!).`}</p>
         </section>
         <section>
           <Heading>socials</Heading>
