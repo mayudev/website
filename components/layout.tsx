@@ -24,7 +24,7 @@ const Container = styled.div<{
 }>`
   width: min(48rem, 95vw);
   padding: 0 1rem;
-  margin: ${(props) => (props.post ? "20vh" : "33vh")} auto 1rem auto;
+  margin: 20vh auto 1rem auto;
 `;
 
 export default function Layout({ children, post }: Props) {
