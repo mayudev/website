@@ -1,0 +1,62 @@
+/* 
+ * Catppuccin theme, poor quick higlight.js port by me (mayudev)
+ * https://github.com/catppuccin/catppuccin
+ */
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #1e1e2e;
+  color: #d9e0ee;
+}
+
+.hljs-keyword,
+.hljs-doctag {
+  color: #f28fad;
+}
+
+.hljs-built_in,
+.hljs-selector-tag,
+.hljs-section,
+.hljs-link,
+.hljs-title,
+.hljs-attr,
+.hljs-literal,
+.hljs-number,
+.hljs-meta-keyword {
+  color: #96cdfb;
+}
+
+.hljs-string,
+.hljs-meta,
+.hljs-name,
+.hljs-type,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #abe9b3;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion {
+  color: #988ba2;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-type,
+.hljs-name,
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}

@@ -9,6 +9,12 @@ export const BackgroundColor = theme("mode", {
   bluishDark: "#1b1e24",
 });
 
+export const BackgroundSecondary = theme("mode", {
+  light: "#e6c3d0",
+  dark: "#302d41",
+  bluishDark: "#30343e",
+});
+
 export const Foreground = theme("mode", {
   light: "#2c2638",
   dark: "#d9e0ee",
@@ -16,9 +22,9 @@ export const Foreground = theme("mode", {
 });
 
 export const ForegroundSecondary = theme("mode", {
-  light: "#352d2f",
-  dark: "#88a2a8",
-  bluishDark: "#88a2a8",
+  light: "#80273d",
+  dark: "#96cdfb",
+  bluishDark: "#ece2c9",
 });
 
 export const Accent = theme("mode", {
@@ -37,4 +43,10 @@ export const AccentSecondary = theme("mode", {
   light: "#574742",
   dark: "#b5e8e0",
   bluishDark: "#ece2c9",
+});
+
+export const Border = theme("mode", {
+  light: "#352d2f",
+  dark: "#575268",
+  bluishDark: "#ecc9d4",
 });

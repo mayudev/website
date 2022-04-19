@@ -6,9 +6,6 @@ const nextConfig = {
   },
   compiler: {
     styledComponents: true,
-    removeConsole: {
-      exclude: ["error"],
-    },
   },
 };
 
