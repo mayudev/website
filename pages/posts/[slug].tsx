@@ -13,6 +13,7 @@ import {
 } from "../../lib/themes";
 import { MDXRemote } from "next-mdx-remote";
 import PostHeader from "../../components/post/post-header";
+import { PostImage } from "../../components/post/post-image";
 
 const Summary = styled.p`
   font-weight: bolder;
@@ -40,10 +41,6 @@ const Article = styled.article`
     border-left: 3px solid ${AccentSecondary};
   }
 
-  ul {
-    color: ${AccentSecondary};
-  }
-
   a {
     color: ${ForegroundSecondary};
 
@@ -68,7 +65,7 @@ const Article = styled.article`
 `;
 
 // Components allowed in a blog post MDX
-const postComponents = {};
+const postComponents = { PostImage };
 
 export default function BlogPost({ post }: { post: Post }) {
   return (
