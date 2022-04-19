@@ -38,3 +38,9 @@ export const AccentSecondary = theme("mode", {
   dark: "#b5e8e0",
   bluishDark: "#ece2c9",
 });
+
+export const Border = theme("mode", {
+  light: "#352d2f",
+  dark: "#575268",
+  bluishDark: "#ecc9d4",
+});

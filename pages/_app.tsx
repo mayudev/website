@@ -1,8 +1,10 @@
 import "../styles/globals.css";
+import "../styles/catppuccin.css";
+
 import type { AppProps } from "next/app";
 import { ThemeMode, ThemeContext, isTheme } from "../lib/themeContext";
 import { useEffect, useState } from "react";
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 // Font Awesome fix
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";

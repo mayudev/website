@@ -6,4 +6,22 @@ date: "2022-04-09T19:54:46.370Z"
 
 First test post
 
-# It's {new Date().getFullYear()}
+## Go
+
+An example Go snippet (from [animethemes-cli](https://github.com/mayudev/animethemes-cli/blob/main/util/entries.go))
+
+```go
+func (a Interface) AskVideos(videos []api.Video) {
+	if len(videos) > 1 {
+		choices := make([]string, len(videos))
+		for i, v := range videos {
+			choices[i] = BuildVideoChoiceString(&v)
+		}
+
+		chosenIndex := SimpleSelection("Select quality", choices)
+		a.Player.Play(&videos[chosenIndex])
+	} else {
+		a.Player.Play(&videos[0])
+	}
+}
+```

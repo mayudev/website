@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 import { getAllPosts, getPost, Post } from "../../lib/posts";
 import { ParsedUrlQuery } from "querystring";
 import styled from "styled-components";
-import { AccentPrimary, AccentSecondary } from "../../lib/themes";
+import { Accent, AccentPrimary, AccentSecondary, Border } from "../../lib/themes";
 import { MDXRemote } from "next-mdx-remote";
 import PostHeader from "../../components/post/post-header";
 
@@ -37,7 +37,32 @@ const Article = styled.article`
   ul {
     color: ${AccentSecondary};
   }
+
+  a {
+    color: ${Accent};
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Styling for code blocks
+  pre {
+    font: inherit;
+  }
+
+  code {
+    font: inherit;
+  }
+
+  .hljs {
+    border: 1px solid ${Border};
+    border-radius: 3px;
+  }
 `;
+
+// Components allowed in a blog post MDX
+const postComponents = {};
 
 export default function BlogPost({ post }: { post: Post }) {
   return (
@@ -53,8 +78,7 @@ export default function BlogPost({ post }: { post: Post }) {
 
         <Summary>{post.summary}</Summary>
 
-        {/* We're using global css this time so we can style the post contents */}
-        <MDXRemote {...post.source} />
+        <MDXRemote {...post.source} components={postComponents} />
       </Article>
     </Layout>
   );

@@ -3,6 +3,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { join } from "path";
 import matter from "gray-matter";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import rehypeHighlight from "rehype-highlight";
 
 const postsDirectory = join(process.cwd(), "posts");
 
@@ -37,7 +38,11 @@ export async function getPost(slug: string) {
   const { data, content } = matter(contents);
 
   // Serialize MDX
-  const mdxSource = await serialize(content);
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      rehypePlugins: [rehypeHighlight],
+    },
+  });
 
   return {
     ...(data as Metadata),
