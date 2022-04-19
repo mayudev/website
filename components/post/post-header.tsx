@@ -1,12 +1,8 @@
 import styled from "styled-components";
-import { Metadata } from "../../lib/posts";
+import { Metadata, Post } from "../../lib/posts";
 import { AccentPrimary, AccentSecondary } from "../../lib/themes";
 import { PostImage } from "./post-image";
 import Timestamp from "./timestamp";
-
-interface Props extends Metadata {
-  content: string;
-}
 
 const Container = styled.div`
   padding-bottom: 1rem;
@@ -31,7 +27,7 @@ const Subtitle = styled.span`
   color: ${AccentSecondary};
 `;
 
-export default function PostHeader(props: Props) {
+export default function PostHeader(props: Post) {
   return (
     <Container>
       <Title>{props.title}</Title>

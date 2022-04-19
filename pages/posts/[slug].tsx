@@ -1,15 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Layout from "../../components/layout";
-import { getAllPosts, getPost, Metadata } from "../../lib/posts";
+import { getAllPosts, getPost, Post } from "../../lib/posts";
 import { ParsedUrlQuery } from "querystring";
-import PostHeader from "../../components/post/post-header";
 import styled from "styled-components";
 import { AccentPrimary, AccentSecondary } from "../../lib/themes";
-
-interface Props extends Metadata {
-  content: string;
-}
+import { MDXRemote } from "next-mdx-remote";
+import PostHeader from "../../components/post/post-header";
 
 const Summary = styled.p`
   font-weight: bolder;
@@ -42,22 +39,22 @@ const Article = styled.article`
   }
 `;
 
-export default function Post(props: Props) {
+export default function BlogPost({ post }: { post: Post }) {
   return (
     <Layout post>
       <Head>
-        <title>{props.title}</title>
-        <meta name="title" content={props.title} />
-        <meta name="description" content={props.summary || "Blog post"} />
+        <title>{post.title}</title>
+        <meta name="title" content={post.title} />
+        <meta name="description" content={post.summary || "Blog post"} />
       </Head>
 
       <Article>
-        <PostHeader {...props} />
+        <PostHeader {...post} />
 
-        <Summary>{props.summary}</Summary>
+        <Summary>{post.summary}</Summary>
 
         {/* We're using global css this time so we can style the post contents */}
-        <div className="article" dangerouslySetInnerHTML={{ __html: props.content }} />
+        <MDXRemote {...post.source} />
       </Article>
     </Layout>
   );
@@ -67,13 +64,15 @@ interface Params extends ParsedUrlQuery {
   slug: string;
 }
 
-export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
+export const getStaticProps: GetStaticProps<{ post: Post }, Params> = async (context) => {
   const params = context.params!;
   const postData = await getPost(params.slug);
 
   return {
     props: {
-      ...postData,
+      post: {
+        ...postData,
+      },
     },
   };
 };
