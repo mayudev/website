@@ -1,5 +1,10 @@
 import styled, { css } from "styled-components";
-import { AccentSecondary, BackgroundColor } from "../../lib/themes";
+import {
+  Accent,
+  AccentSecondary,
+  BackgroundColor,
+  ForegroundSecondary,
+} from "../../lib/themes";
 
 type Props = {
   withIcon?: boolean;
@@ -8,13 +13,13 @@ type Props = {
 const NiceLink = styled.a<Props>`
   margin-bottom: 8px;
   padding: 2px;
-  color: ${AccentSecondary};
+  color: ${ForegroundSecondary};
   font-weight: bolder;
 
   transition: background 0.2s, color 0.2s;
 
   &:hover {
-    background: ${AccentSecondary};
+    background: ${ForegroundSecondary};
     color: ${BackgroundColor};
   }
 
