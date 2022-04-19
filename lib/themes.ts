@@ -16,8 +16,8 @@ export const Foreground = theme("mode", {
 });
 
 export const ForegroundSecondary = theme("mode", {
-  light: "#352d2f",
-  dark: "#c9cbff",
+  light: "#80273d",
+  dark: "#96cdfb",
   bluishDark: "#88a2a8",
 });
 

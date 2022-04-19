@@ -2,7 +2,7 @@ import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { Post } from "../../lib/posts";
-import { AccentPrimary, ForegroundSecondary } from "../../lib/themes";
+import { AccentPrimary } from "../../lib/themes";
 import { PostImage } from "./post-image";
 import Timestamp from "./timestamp";
 
@@ -22,7 +22,7 @@ const Subtitle = styled.span`
   display: flex;
   align-items: center;
   margin: 1rem 0;
-  color: ${ForegroundSecondary};
+  color: ${AccentPrimary};
 `;
 
 const SubtitleSpan = styled.span`

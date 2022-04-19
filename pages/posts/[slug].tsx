@@ -4,7 +4,13 @@ import Layout from "../../components/layout";
 import { getAllPosts, getPost, Post } from "../../lib/posts";
 import { ParsedUrlQuery } from "querystring";
 import styled from "styled-components";
-import { Accent, AccentPrimary, AccentSecondary, Border } from "../../lib/themes";
+import {
+  Accent,
+  AccentPrimary,
+  AccentSecondary,
+  Border,
+  ForegroundSecondary,
+} from "../../lib/themes";
 import { MDXRemote } from "next-mdx-remote";
 import PostHeader from "../../components/post/post-header";
 
@@ -39,7 +45,7 @@ const Article = styled.article`
   }
 
   a {
-    color: ${Accent};
+    color: ${ForegroundSecondary};
 
     &:hover {
       text-decoration: underline;
