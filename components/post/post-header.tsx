@@ -1,13 +1,12 @@
+import { faClock } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import { Metadata, Post } from "../../lib/posts";
-import { AccentPrimary, AccentSecondary } from "../../lib/themes";
+import { Post } from "../../lib/posts";
+import { AccentPrimary, ForegroundSecondary } from "../../lib/themes";
 import { PostImage } from "./post-image";
 import Timestamp from "./timestamp";
 
-const Container = styled.div`
-  padding-bottom: 1rem;
-  border-bottom: 2px solid ${AccentPrimary};
-`;
+const Container = styled.div``;
 
 const Title = styled.h1`
   font-size: 2rem;
@@ -19,12 +18,15 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.span`
-  font-weight: bolder;
-  border-left: 3px solid ${AccentSecondary};
   padding-left: 1rem;
-  display: block;
+  display: flex;
+  align-items: center;
   margin: 1rem 0;
-  color: ${AccentSecondary};
+  color: ${ForegroundSecondary};
+`;
+
+const SubtitleSpan = styled.span`
+  padding-left: 12px;
 `;
 
 export default function PostHeader(props: Post) {
@@ -34,7 +36,10 @@ export default function PostHeader(props: Post) {
 
       {props.date && (
         <Subtitle>
-          <Timestamp date={props.date} />
+          <FontAwesomeIcon icon={faClock} />
+          <SubtitleSpan>
+            <Timestamp date={props.date} />
+          </SubtitleSpan>
         </Subtitle>
       )}
 
