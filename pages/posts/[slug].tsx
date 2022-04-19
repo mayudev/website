@@ -8,6 +8,7 @@ import {
   Accent,
   AccentPrimary,
   AccentSecondary,
+  BackgroundSecondary,
   Border,
   ForegroundSecondary,
 } from "../../lib/themes";
@@ -47,6 +48,12 @@ const Article = styled.article`
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  // Styling for quotes (using \`)
+  p code {
+    border-radius: 6px;
+    background: ${BackgroundSecondary};
   }
 
   // Styling for code blocks

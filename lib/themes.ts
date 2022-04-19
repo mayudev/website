@@ -9,6 +9,12 @@ export const BackgroundColor = theme("mode", {
   bluishDark: "#1b1e24",
 });
 
+export const BackgroundSecondary = theme("mode", {
+  light: "#e6c3d0",
+  dark: "#302d41",
+  bluishDark: "#30343e",
+});
+
 export const Foreground = theme("mode", {
   light: "#2c2638",
   dark: "#d9e0ee",
