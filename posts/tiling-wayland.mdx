@@ -1,0 +1,67 @@
+---
+title: "My experience with a tiling WM and Wayland"
+summary: "Well, a tiling compositor."
+date: "2022-04-23T18:59:30.001Z"
+---
+
+About three months ago I made a decision to switch back to Linux. As for the distro, the obvious choice was Arch. Some people may hate it, say it's unstable... but honestly, I've always been satisfied with it.
+
+_Well, technically I switched to Void a few days ago, but that's only because I felt like distro hopping. And I like just about as much as Arch._
+
+But then, there was a second question: which desktop environment should I pick? Even though there aren't _that many_ choices, I always have trouble with that, especially that I wanted to stick to Wayland.
+
+Then I thought, why not try tiling this time? If I really hated it, I could just install GNOME and forget about it... but instead, I ended up loving it.
+
+## Why Wayland is a must for me?
+
+As a user that doesn't really know about the inner workings of Xorg, is there really a reason for me to hate it? Well... actually yes. I wouldn't be that much of a diehard Wayland fan if it wasn't for a tiny, but annoying as hell issue with Xorg: handling multiple displays with different refresh rates.
+
+Currently, my setup consists of a 75Hz display and a secondary 60Hz one. Windows handles them without any issues, but Xorg decides to lock them both at 60Hz.
+
+Why? Apparently it's because of how Xorg works - it can only render picture for all monitors at once, and that's how it was designed. It really shows how poor Xorg design decisions were and why it shouldn't be used anymore today.
+
+Apparently, [they fixed it](https://www.phoronix.com/scan.php?page=news_item&px=X.Org-AsyncFlipSecondaries)... but along the way, I've found way more reasons to stick with Wayland, so I'm not going back.
+
+## Sway
+
+When it comes to tiling compositors (window managers), Sway is pretty much the only choice for now. Its config is compatible with i3, but that didn't really matter to me since I had no config to rely upon - it was my first experience with tiling ever.
+
+Compared to i3, Sway is missing a few features (and the dev really [insists](https://github.com/swaywm/sway/issues/4356) on [not](https://github.com/swaywm/sway/issues/3583) adding them) like blur or rounded corners (on i3 and other Xorg window managers, it's the compositor's job - on Wayland, the compositor and window manager are one thing), but I had no choice but to cope. No, for real though, I don't really mind.
+
+## The tiling part
+
+Once I installed Arch and started up Sway, I began making my own config. The configuration of Sway itself is pretty easy, and the defaults are good enough. I ended up adding just a few custom keybinds and rules for opacity and floating windows.
+
+For the status bar, I used **waybar**. I have to admit I was _greatly_ inspired by some config I found on r/unixporn, but I ended up tweaking it quite a lot, so I guess I can call it _mine_.
+
+App launcher: many people prefer text-based app launchers like dmenu, but I decided to go with **rofi**. About that, I wasn't really satisfied with any Wayland replacement, but luckily, there exists a [fork](https://github.com/lbonn/rofi) of rofi that adds native Wayland support.
+
+I chose Alacritty for the terminal emulator... mainly because it was mentioned in the default Sway config. Later, I learned about alternatives like Kitty or foot, but I decided to stick with Alacritty since I couldn't find any fault with it. Well, it does eat quite a lot of RAM, but I got plenty of it in my PC so I don't mind.
+
+I still use VS Code (the proprietary Insiders version, more on that later) as my main text editor, but I do use Neovim for config files (where I would usually use nano). Honestly, it's way better than nano, but I can't imagine it replacing VS Code for me anytime soon.
+
+## Wayland struggles
+
+### Native toolkits
+
+Wayland support in applications is really, really good nowadays. GTK supports it by default, which is awesome. Qt does too, but I don't use Qt apps very often.
+
+Firefox requires just an additional environment variable to be set and then it works flawlessly. Why do they still require it?
+
+### Java
+
+That applies mainly to JetBrains IDEs, they just don't work without a particular [environment variable](https://github.com/swaywm/sway/wiki/Running-programs-natively-under-wayland#java-under-xwayland) specified. Other than that, they work... fine, I guess.
+
+### Electron
+
+I would say Electron is an awesome thing for web developers, but terrible for users. While I try to use the web versions when possible (Discord, Element, etc.), in some cases a native app is preferred.
+
+One of such cases is Visual Studio Code, which due to an Electron bug just refuses to work in Wayland mode on Sway. I tried VSCodium, but it uses the same faulty version of Electron. The solution was to use VS Code Insiders, which includes the latest version of Electron which has the issue fixed. I'll definitely switch to VSCodium once it gets updated.
+
+## Final thoughts
+
+I ended up getting used to a tiling workflow very quickly. While I can't really say if it's made me any more efficient, looking at the desktop I've built myself each time I boot up my PC is quite satisfying.
+
+Configuring everything might seem like a hassle, but to me it was just fun. In fact, I think simple window managers (not just tiling) like Sway are way easier to customize than a complete desktop environment like GNOME or KDE Plasma.
+
+Wayland support has improved recently, and it shows no signs of slowing down with Ubuntu 22.04 (which is an LTS release) using it as default. Personally, I don't plan on going back to Xorg ever again - and fortunately, it doesn't seem like there would be any reason to.
