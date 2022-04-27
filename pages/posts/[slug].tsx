@@ -15,6 +15,9 @@ import {
 import { MDXRemote } from "next-mdx-remote";
 import PostHeader from "../../components/post/post-header";
 import { PostImage } from "../../components/post/post-image";
+import BlogLink from "../../components/post/post-link";
+import { PropsWithChildren } from "react";
+import { MDXComponents } from "mdx/types";
 
 const Summary = styled.p`
   font-weight: bolder;
@@ -71,8 +74,13 @@ const Article = styled.article`
   }
 `;
 
+// Link component to be used in posts
+
 // Components allowed in a blog post MDX
-const postComponents = { PostImage };
+const postComponents = {
+  PostImage,
+  a: (props: PropsWithChildren<{ href: string }>) => <BlogLink {...props} />,
+};
 
 export default function BlogPost({ post }: { post: Post }) {
   return (
@@ -88,7 +96,7 @@ export default function BlogPost({ post }: { post: Post }) {
 
         <Summary>{post.summary}</Summary>
 
-        <MDXRemote {...post.source} components={postComponents} />
+        <MDXRemote {...post.source} components={postComponents as MDXComponents} />
       </Article>
     </Layout>
   );
