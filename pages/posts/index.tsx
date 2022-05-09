@@ -1,10 +1,9 @@
 import { GetStaticProps } from "next";
 import styled from "styled-components";
-import Heading from "../../components/home/heading";
 import Layout from "../../components/layout";
 import PostSummary from "../../components/post-summary";
 import { getSortedPosts, PostData } from "../../lib/posts";
-import { Accent, AccentSecondary } from "../../lib/themes";
+import { Accent } from "../../lib/themes";
 
 type Props = {
   posts: PostData[];
