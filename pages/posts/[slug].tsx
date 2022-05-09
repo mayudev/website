@@ -5,7 +5,6 @@ import { getAllPosts, getPost, Post } from "../../lib/posts";
 import { ParsedUrlQuery } from "querystring";
 import styled from "styled-components";
 import {
-  Accent,
   AccentPrimary,
   AccentSecondary,
   BackgroundSecondary,
