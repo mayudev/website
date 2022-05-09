@@ -19,6 +19,9 @@ export interface Metadata {
 
   // Publish date
   date: string;
+
+  // Post tags
+  tags?: string[];
 }
 
 export interface PostData extends Metadata {
