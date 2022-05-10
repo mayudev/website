@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { getAllPosts, getPost, getSortedPosts, PostData } from "../../lib/posts";
+import { getUniqueTags } from "../../lib/tags";
 import BlogPosts from "../posts";
 
 type Props = {
@@ -13,7 +14,7 @@ interface Params extends ParsedUrlQuery {
 }
 
 export default function TagsPage(props: Props) {
-  return <BlogPosts tag={props.tag} posts={props.posts}></BlogPosts>;
+  return <BlogPosts tag={props.tag} posts={props.posts} tags={[]}></BlogPosts>;
 }
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
@@ -32,21 +33,11 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = getAllPosts();
-
-  let tagsSet = new Set<string>();
-
-  for (let post of posts) {
-    const data = await getPost(post.params.slug);
-
-    if (data.tags) {
-      data.tags.forEach((tag) => tagsSet.add(tag));
-    }
-  }
+  const tags = await getUniqueTags();
 
   let paths: { params: { tag: string } }[] = [];
 
-  tagsSet.forEach((tag) => {
+  tags.forEach((tag) => {
     paths.push({
       params: {
         tag: tag,
