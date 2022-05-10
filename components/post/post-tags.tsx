@@ -1,16 +1,32 @@
 import Link from "next/link";
-import React from "react";
+import React, { PropsWithChildren } from "react";
+import styled from "styled-components";
+import { ForegroundSecondary } from "../../lib/themes";
 
-export default function Tags({ tags }: { tags: string[] }) {
+const Container = styled.span`
+  a {
+    color: ${ForegroundSecondary};
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+export default function Tags({ tags, inPost }: { tags: string[]; inPost: boolean }) {
   const build = () =>
     tags.map((tag, i) => {
       return (
-        <React.Fragment key={tag}>
+        <Container key={tag}>
           <Link href={"/tags/" + tag}>{tag}</Link>
           {i != tags.length - 1 && ", "}
-        </React.Fragment>
+        </Container>
       );
     });
 
-  return <div>Tags: {build()}</div>;
+  return (
+    <div>
+      {inPost && "Tags:"} {build()}
+    </div>
+  );
 }

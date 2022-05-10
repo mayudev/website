@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 import styled from "styled-components";
 import Layout from "../../components/layout";
 import PostSummary from "../../components/post-summary";
-import TagIndex from "../../components/tag-index";
+import Tags from "../../components/post/post-tags";
 import { getSortedPosts, PostData } from "../../lib/posts";
 import { getUniqueTags } from "../../lib/tags";
 import { Accent } from "../../lib/themes";
@@ -26,7 +26,12 @@ export default function BlogPosts({ posts, tag, tags }: Props) {
       {posts.map((post) => (
         <PostSummary key={post.slug} post={post} />
       ))}
-      {!tag && <TagIndex tags={tags} />}
+      {!tag && (
+        <>
+          <TagHeading>Tags</TagHeading>
+          <Tags inPost={false} tags={tags} />
+        </>
+      )}
     </Layout>
   );
 }

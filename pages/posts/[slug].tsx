@@ -98,7 +98,7 @@ export default function BlogPost({ post }: { post: Post }) {
 
         <MDXRemote {...post.source} components={postComponents as MDXComponents} />
 
-        {post.tags && <Tags tags={post.tags} />}
+        {post.tags && <Tags inPost tags={post.tags} />}
       </Article>
     </Layout>
   );
