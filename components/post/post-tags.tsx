@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import styled from "styled-components";
 import { ForegroundSecondary } from "../../lib/themes";
 
