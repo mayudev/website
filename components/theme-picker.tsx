@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { Accent, AccentPrimary, BackgroundColor } from "../lib/themes";
+import { BackgroundColor } from "../lib/themes";
 import Theme from "./theme";
 
 type Props = {

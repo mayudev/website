@@ -1,10 +1,5 @@
 import styled, { css } from "styled-components";
-import {
-  Accent,
-  AccentSecondary,
-  BackgroundColor,
-  ForegroundSecondary,
-} from "../../lib/themes";
+import { BackgroundColor, ForegroundSecondary } from "../../lib/themes";
 
 type Props = {
   withIcon?: boolean;

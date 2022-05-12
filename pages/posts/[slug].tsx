@@ -5,7 +5,6 @@ import { getAllPosts, getPost, Post } from "../../lib/posts";
 import { ParsedUrlQuery } from "querystring";
 import styled from "styled-components";
 import {
-  Accent,
   AccentPrimary,
   AccentSecondary,
   BackgroundSecondary,
@@ -18,6 +17,7 @@ import { PostImage } from "../../components/post/post-image";
 import BlogLink from "../../components/post/post-link";
 import { PropsWithChildren } from "react";
 import { MDXComponents } from "mdx/types";
+import Tags from "../../components/post/post-tags";
 
 const Summary = styled.p`
   font-weight: bolder;
@@ -97,6 +97,8 @@ export default function BlogPost({ post }: { post: Post }) {
         <Summary>{post.summary}</Summary>
 
         <MDXRemote {...post.source} components={postComponents as MDXComponents} />
+
+        {post.tags && <Tags inPost tags={post.tags} />}
       </Article>
     </Layout>
   );
