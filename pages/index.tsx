@@ -1,4 +1,5 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faMessage } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { GetStaticProps } from "next";
 import Heading from "../components/home/heading";
@@ -33,15 +34,28 @@ export default function Home({ posts, projects }: Props) {
         <section>
           <Heading>socials</Heading>
           <p>{`I don't use social media much.`}</p>
-          <NiceLink
-            withIcon
-            href="https://github.com/mayudev"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-            <NiceLinkText>GitHub</NiceLinkText>
-          </NiceLink>
+          <div>
+            <NiceLink
+              withIcon
+              href="https://github.com/mayudev"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faGithub} />
+              <NiceLinkText>GitHub</NiceLinkText>
+            </NiceLink>
+          </div>
+          <div>
+            <NiceLink
+              withIcon
+              href="https://matrix.to/#/@mayudev:matrix.org"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faMessage} />
+              <NiceLinkText>Matrix</NiceLinkText>
+            </NiceLink>
+          </div>
         </section>
 
         <section>
