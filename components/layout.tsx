@@ -36,7 +36,14 @@ export default function Layout({ children, post }: Props) {
           <title>Mayu</title>
           <meta name="title" content="Mayu" />
           <meta name="author" content="Mayu" />
-          <meta name="description" content="Mayu's website" />
+          <meta name="description" content="I'm Mayu, a hobbyist web developer." />
+
+          <meta
+            property="og:image"
+            content="https://avatars.githubusercontent.com/u/99561108?s=120&v=4"
+          />
+          <meta property="og:image:width" content="120" />
+          <meta property="og:image:height" content="120" />
 
           <meta property="og:site_name" content="Mayu" />
           <meta property="og:type" content="website" />
