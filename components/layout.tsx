@@ -37,6 +37,7 @@ export default function Layout({ children, post }: Props) {
           <meta name="title" content="Mayu" />
           <meta name="author" content="Mayu" />
           <meta name="description" content="I'm Mayu, a hobbyist web developer." />
+          <meta name="theme-color" content="#f5c2e7" />
 
           <meta
             property="og:image"
