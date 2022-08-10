@@ -28,19 +28,23 @@ const Heading = styled.h1<{
 }>`
   font-size: 2rem;
   overflow: hidden;
-  border-right: 0.3rem solid ${Foreground};
   line-height: 2.1rem;
   padding-right: 3px;
   margin-bottom: 0.5rem;
   white-space: nowrap;
 
-  ${(props) =>
+  @media not (prefers-reduced-motion) {
+    ${(props) =>
     props.blink
       ? css`
-          width: 0;
-          animation: ${type} 0.2s steps(4, end) forwards, ${blink} 0.4s alternate infinite;
-        `
+            border-right: 0.3rem solid ${Foreground};
+            width: 0;
+            animation: ${type} 0.2s steps(4, end) forwards, ${blink} 0.4s alternate infinite;
+          `
       : ""};
+  }
+
+
 `;
 
 const Subheading = styled.h2<{
