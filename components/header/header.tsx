@@ -34,14 +34,15 @@ const Heading = styled.h1<{
   white-space: nowrap;
 
   @media not (prefers-reduced-motion) {
-  ${(props) =>
-    props.blink
-      ? css`
-          border-right: 0.3rem solid ${Foreground};
-          width: 0;
-          animation: ${type} 0.2s steps(4, end) forwards, ${blink} 0.4s alternate infinite;
-        `
-      : ""};
+    ${props =>
+      props.blink
+        ? css`
+            border-right: 0.3rem solid ${Foreground};
+            width: 0;
+            animation: ${type} 0.2s steps(4, end) forwards,
+              ${blink} 0.4s alternate infinite;
+          `
+        : ""};
   }
 `;
 
@@ -51,7 +52,7 @@ const Subheading = styled.h2<{
   color: ${AccentPrimary};
   margin: 0 0 1rem 0;
   border-bottom: 1px solid ${AccentPrimary};
-  font-size: ${(props) => (props.small ? "1rem" : "1.2rem")};
+  font-size: ${props => (props.small ? "1rem" : "1.2rem")};
   line-height: 1.5;
 `;
 
