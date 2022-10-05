@@ -9,18 +9,19 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
-
-import { BackgroundColor, Foreground } from "../lib/themes";
+import themeCatppuccin from "../lib/themes/catppuccin";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background: ${BackgroundColor};
-    color: ${Foreground};
+    background:${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.foreground};
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
   :root {
-    --bg: ${BackgroundColor};
-    --fg: ${Foreground};
+    --bg:  ${(props) => props.theme.colors.background};
+    --fg: ${(props) => props.theme.colors.foreground};
   }
 `;
 
@@ -35,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeContext.Provider value={[themeContext, setThemeContext]}>
-      <ThemeProvider theme={{ mode: themeContext }}>
+      <ThemeProvider theme={themeCatppuccin}>
         <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>

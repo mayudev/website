@@ -4,13 +4,6 @@ import Layout from "../../components/layout";
 import { getAllPosts, getPost, Post } from "../../lib/posts";
 import { ParsedUrlQuery } from "querystring";
 import styled from "styled-components";
-import {
-  AccentPrimary,
-  AccentSecondary,
-  BackgroundSecondary,
-  Border,
-  ForegroundSecondary,
-} from "../../lib/themes";
 import { MDXRemote } from "next-mdx-remote";
 import PostHeader from "../../components/post/post-header";
 import { PostImage } from "../../components/post/post-image";
@@ -30,23 +23,15 @@ const Article = styled.article`
   }
 
   h1,
-  h2 {
-    padding-left: 1rem;
-
-    color: ${AccentPrimary};
-    border-left: 3px solid ${AccentPrimary};
-  }
-
+  h2,
   h3,
   h4 {
     padding-left: 1rem;
-
-    color: ${AccentSecondary};
-    border-left: 3px solid ${AccentSecondary};
+    border-left: 3px solid;
   }
 
   a {
-    color: ${ForegroundSecondary};
+    color: ${(props) => props.theme.colors.primary};
 
     &:hover {
       text-decoration: underline;
@@ -56,7 +41,7 @@ const Article = styled.article`
   // Styling for quotes (using \`)
   p code {
     border-radius: 6px;
-    background: ${BackgroundSecondary};
+    background: ${(props) => props.theme.colors.backgroundSimple};
   }
 
   // Styling for code blocks
@@ -69,8 +54,9 @@ const Article = styled.article`
   }
 
   .hljs {
-    border: 1px solid ${Border};
+    background: ${(props) => props.theme.colors.backgroundSimple};
     border-radius: 3px;
+    font-size: 15px;
   }
 `;
 

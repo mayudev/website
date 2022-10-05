@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { PostData } from "../lib/posts";
-import { AccentPrimary, AccentSecondary } from "../lib/themes";
 import Timestamp from "./post/timestamp";
 
 type Props = {
@@ -13,8 +12,8 @@ const Title = styled.h1`
   padding-left: 1rem;
   padding-right: 17px;
 
-  color: ${AccentPrimary};
-  border-left: 3px solid ${AccentPrimary};
+  color: ${(props) => props.theme.colors.secondary};
+  border-left: 3px solid;
 
   transition: border-left-width 0.2s ease-out, padding-right 0.2s ease-out;
 `;
@@ -27,7 +26,6 @@ const Container = styled.div`
 `;
 
 const PostDate = styled.div`
-  color: ${AccentSecondary};
   margin-top: 1rem;
   font-weight: bolder;
 `;

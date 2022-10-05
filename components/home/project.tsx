@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import { IProject } from "../../lib/projects";
-import { AccentSecondary } from "../../lib/themes";
 
 const Name = styled.h2`
-  border-left: 2px solid ${AccentSecondary};
+  border-left: 2px solid;
   padding-left: 1rem;
   font-size: 1.2rem;
-  color: ${AccentSecondary};
 
   transition: border-left-width 0.2s ease-out, padding-right 0.2s ease-out;
 `;

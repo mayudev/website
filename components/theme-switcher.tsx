@@ -2,7 +2,6 @@ import { faClose, faPalette } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import styled from "styled-components";
-import { Accent } from "../lib/themes";
 import ThemePicker from "./theme-picker";
 
 const Container = styled.div`
@@ -21,7 +20,6 @@ const Container = styled.div`
 const FloatingActionButton = styled.button`
   all: unset;
 
-  //padding: 15px;
   height: 52px;
   width: 52px;
 
@@ -29,9 +27,7 @@ const FloatingActionButton = styled.button`
   vertical-align: center;
 
   border-radius: 50%;
-  background: ${Accent};
-  color: #1b1e24;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  color: ${(props) => props.theme.colors.foreground};
 
   cursor: pointer;
   transition: opacity 0.2s ease-in-out;
