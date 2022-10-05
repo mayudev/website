@@ -22,18 +22,20 @@ export default function Home({ posts, projects }: Props) {
         <section>
           <p>{`Hi! I'm Mayu, an aspiring web developer.`}</p>
 
-          <p>{`Web development is my main interest, but I also want to make mobile apps, and maybe some console tools.`}</p>
+          <p>
+            My main interest <b>web development</b> and <b>mobile applications</b>, but I
+            sometimes work on various kind of things, like native applications.
+          </p>
 
           <p>
             My favorite languages are <b>TypeScript</b> and <b>Go</b>, but I&apos;m
-            currently learning Rust, and I can&apos;t wait to pick up Flutter soon.
+            currently learning Rust, Flutter and Kotlin.
           </p>
 
-          <p>{`I'm something of a Linux enthusiast, currently using Void Linux with Sway (wayland!).`}</p>
+          <p>{`I'm something of a Linux enthusiast, currently using Void NixOS with Sway (wayland!).`}</p>
         </section>
         <section>
           <Heading>socials</Heading>
-          <p>{`I don't use social media much.`}</p>
           <div>
             <NiceLink
               withIcon
