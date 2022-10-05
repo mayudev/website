@@ -34,7 +34,7 @@ const Heading = styled.h1<{
   white-space: nowrap;
 
   @media not (prefers-reduced-motion) {
-    ${props =>
+    ${(props) =>
       props.blink
         ? css`
             border-right: 0.3rem solid ${Foreground};
@@ -46,13 +46,11 @@ const Heading = styled.h1<{
   }
 `;
 
-const Subheading = styled.h2<{
-  small: boolean;
-}>`
+const Subheading = styled.h2`
   color: ${AccentPrimary};
   margin: 0 0 1rem 0;
   border-bottom: 1px solid ${AccentPrimary};
-  font-size: ${props => (props.small ? "1rem" : "1.2rem")};
+  font-size: 1.2rem;
   line-height: 1.5;
 `;
 
@@ -67,12 +65,10 @@ const Split = styled.div`
 `;
 
 export default function Header({ post }: { post: boolean }) {
-  const avatarSize = post ? 64 : 100;
-
   return (
     <Container>
-      <span style={{ height: avatarSize }}>
-        <Avatar size={avatarSize} />
+      <span style={{ height: 96 }}>
+        <Avatar size={96} />
       </span>
 
       <Split>
@@ -81,7 +77,7 @@ export default function Header({ post }: { post: boolean }) {
             <Heading blink={!post}>Mayu</Heading>
           </HeadingContainer>
 
-          <Subheading small={post}>hobbyist web developer</Subheading>
+          <Subheading>hobbyist web developer</Subheading>
         </div>
         <div>
           <Links />
