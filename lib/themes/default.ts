@@ -1,6 +1,6 @@
 import { DefaultTheme } from "styled-components";
 
-const themeCatppuccin: DefaultTheme = {
+const themeDefault: DefaultTheme = {
   colors: {
     background: "linear-gradient(45deg,#1c1c2d,#6a354e)",
     backgroundSimple: "#1c1c2d",
@@ -12,4 +12,4 @@ const themeCatppuccin: DefaultTheme = {
   breakpoint: 400,
 };
 
-export default themeCatppuccin;
+export default themeDefault;
