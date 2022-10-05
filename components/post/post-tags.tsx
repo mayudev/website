@@ -1,11 +1,10 @@
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import { ForegroundSecondary } from "../../lib/themes";
 
 const Container = styled.span`
   a {
-    color: ${ForegroundSecondary};
+    color: ${(props) => props.theme.colors.primary};
 
     &:hover {
       text-decoration: underline;

@@ -9,7 +9,6 @@ import PostSummary from "../../components/post-summary";
 import Tags from "../../components/post/post-tags";
 import { getSortedPosts, PostData } from "../../lib/posts";
 import { getUniqueTags } from "../../lib/tags";
-import { ForegroundSecondary } from "../../lib/themes";
 
 type Props = {
   posts: PostData[];
@@ -21,8 +20,7 @@ const TagHeading = styled.h1`
   font-size: 1.8rem;
   padding-left: 1rem;
 
-  color: ${ForegroundSecondary};
-  border-left: 3px solid ${ForegroundSecondary};
+  border-left: 3px solid;
 `;
 
 export default function BlogPosts({ posts, tag, tags }: Props) {

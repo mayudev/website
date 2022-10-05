@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { BackgroundColor } from "../lib/themes";
 import Theme from "./theme";
 
 type Props = {
@@ -19,8 +18,6 @@ const Picker = styled.div`
 
   display: flex;
   flex-direction: column;
-
-  background: ${BackgroundColor};
 `;
 
 export default function ThemePicker({ onHide }: Props) {

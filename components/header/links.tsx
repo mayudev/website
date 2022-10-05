@@ -2,12 +2,11 @@ import { faHome, faNewspaper } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import styled from "styled-components";
-import { AccentSecondary, NarrowBreakpoint } from "../../lib/themes";
 
 const Container = styled.div`
   display: flex;
 
-  @media (max-width: ${NarrowBreakpoint}px) {
+  @media (max-width: ${(props) => props.theme.breakpoint}px) {
     justify-content: center;
     margin-bottom: 1rem;
   }
@@ -22,12 +21,11 @@ const LinkContainer = styled.a`
     margin-left: 3rem;
   }
 
-  transition: text-decoration 0.2s ease-in-out;
-
-  color: ${AccentSecondary};
+  transition: text-decoration 0.2s ease-in-out, color 0.2s;
 
   &:hover {
     text-decoration: underline;
+    color: ${(props) => props.theme.colors.primary};
   }
 `;
 

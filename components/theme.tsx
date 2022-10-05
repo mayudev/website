@@ -1,7 +1,6 @@
 import { PropsWithChildren, useContext } from "react";
 import styled from "styled-components";
 import { ThemeContext, ThemeMode } from "../lib/themeContext";
-import { Accent } from "../lib/themes";
 
 type Props = {
   name: ThemeMode;
@@ -20,7 +19,7 @@ const Container = styled.button`
   font-size: 1.2rem;
   align-self: flex-end;
 
-  border-right: 2px solid ${Accent};
+  border-right: 2px solid;
 
   &:hover {
     text-decoration: underline;

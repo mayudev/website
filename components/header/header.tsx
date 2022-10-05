@@ -1,5 +1,4 @@
 import styled, { css, keyframes } from "styled-components";
-import { AccentPrimary, Foreground, NarrowBreakpoint } from "../../lib/themes";
 import { Avatar } from "./avatar";
 import Links from "./links";
 
@@ -19,7 +18,7 @@ const type = keyframes`
 `;
 
 const blink = keyframes`
-  from { border-color: var(--bg); }
+  from { border-color: transparent; }
   to { border-color: var(--fg); }
 `;
 
@@ -37,7 +36,7 @@ const Heading = styled.h1<{
     ${(props) =>
       props.blink
         ? css`
-            border-right: 0.3rem solid ${Foreground};
+            border-right: 0.3rem solid ${(props) => props.theme.colors.foreground};
             width: 0;
             animation: ${type} 0.2s steps(4, end) forwards,
               ${blink} 0.4s alternate infinite;
@@ -47,9 +46,9 @@ const Heading = styled.h1<{
 `;
 
 const Subheading = styled.h2`
-  color: ${AccentPrimary};
+  color: ${(props) => props.theme.colors.primary};
   margin: 0 0 1rem 0;
-  border-bottom: 1px solid ${AccentPrimary};
+  border-bottom: 1px solid ${(props) => props.theme.colors.primary};
   font-size: 1.2rem;
   line-height: 1.5;
 `;
@@ -59,7 +58,7 @@ const Split = styled.div`
 
   justify-content: space-between;
 
-  @media (max-width: ${NarrowBreakpoint}px) {
+  @media (max-width: ${(props) => props.theme.breakpoint}px) {
     flex-direction: column;
   }
 `;

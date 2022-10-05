@@ -2,7 +2,6 @@ import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { Post } from "../../lib/posts";
-import { AccentPrimary } from "../../lib/themes";
 import { PostImage } from "./post-image";
 import Timestamp from "./timestamp";
 
@@ -13,8 +12,8 @@ const Title = styled.h1`
   margin: 1rem 0;
   padding-left: 1rem;
 
-  color: ${AccentPrimary};
-  border-left: 3px solid ${AccentPrimary};
+  color: ${(props) => props.theme.colors.secondary};
+  border-left: 3px solid ${(props) => props.theme.colors.secondary};
 `;
 
 const Subtitle = styled.span`
@@ -22,7 +21,7 @@ const Subtitle = styled.span`
   display: flex;
   align-items: center;
   margin: 1rem 0;
-  color: ${AccentPrimary};
+  opacity: 0.7;
 `;
 
 const SubtitleSpan = styled.span`
