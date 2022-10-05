@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
-import { getAllPosts, getPost, getSortedPosts, PostData } from "../../lib/posts";
+import { getSortedPosts, PostData } from "../../lib/posts";
 import { getUniqueTags } from "../../lib/tags";
 import BlogPosts from "../posts";
 
