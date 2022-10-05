@@ -23,7 +23,7 @@ const Picker = styled.div`
 export default function ThemePicker({ onHide }: Props) {
   return (
     <Picker onClick={onHide}>
-      <Theme name="dark">default (catppuccin)</Theme>
+      <Theme name="dark">default dark</Theme>
       <Theme name="bluishDark">bluish-dark theme</Theme>
       <Theme name="light">light pink</Theme>
     </Picker>

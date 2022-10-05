@@ -2,14 +2,14 @@ import "../styles/globals.css";
 import "../styles/catppuccin.css";
 
 import type { AppProps } from "next/app";
-import { ThemeMode, ThemeContext, isTheme } from "../lib/themeContext";
+import { ThemeMode, ThemeContext, isTheme, themeMappings } from "../lib/themeContext";
 import { useEffect, useState } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 // Font Awesome fix
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
-import themeCatppuccin from "../lib/themes/catppuccin";
+import themeBluish from "../lib/themes/bluish";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeContext.Provider value={[themeContext, setThemeContext]}>
-      <ThemeProvider theme={themeCatppuccin}>
+      <ThemeProvider theme={themeMappings[themeContext]}>
         <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>
