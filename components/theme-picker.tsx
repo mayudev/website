@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { FontMode, useFont } from "../lib/fontContext";
 import Theme from "./theme";
 
 type Props = {
@@ -24,9 +25,47 @@ const Picker = styled.div`
   display: grid;
 `;
 
+const FontSettings = styled.div`
+  padding: 0.5rem;
+`;
+
+const Font = styled.button<{
+  active?: boolean;
+}>`
+  all: unset;
+  display: block;
+
+  ${(props) =>
+    props.active &&
+    `
+  color: ${props.theme.colors.primary};
+  text-decoration: underline;`}
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+`;
+
 export default function ThemePicker({ onHide }: Props) {
+  const [font, setFont] = useFont();
+
+  const applyFont = (font: FontMode) => {
+    setFont(font);
+    localStorage.setItem("font", font);
+  };
+
   return (
     <Picker onClick={onHide}>
+      <FontSettings>
+        font setting
+        <Font onClick={() => applyFont("monospace")} active={font === "monospace"}>
+          monospace
+        </Font>
+        <Font onClick={() => applyFont("sans-serif")} active={font === "sans-serif"}>
+          sans-serif
+        </Font>
+      </FontSettings>
       <Theme name="dark">default dark</Theme>
       <Theme name="bluishDark">bluish-dark theme</Theme>
       <Theme name="light">light pink</Theme>
