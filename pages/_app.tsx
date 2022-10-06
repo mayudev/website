@@ -8,8 +8,9 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 // Font Awesome fix
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import "@fontsource/iosevka/400.css";
+import "@fontsource/iosevka/700.css";
 config.autoAddCss = false;
-import themeBluish from "../lib/themes/bluish";
 
 const GlobalStyle = createGlobalStyle`
   body {
