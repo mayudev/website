@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/iosevka": "^4.5.4",
+    "@fontsource/lexend": "^4.5.13",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
