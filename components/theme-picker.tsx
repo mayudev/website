@@ -7,17 +7,21 @@ type Props = {
 
 const appear = keyframes`
   from { opacity: 0; }
-  to { margin-bottom: 15px; opacity: 1; }  
+  to { opacity: 1; }  
 `;
 
 const Picker = styled.div`
+  background: ${(props) => props.theme.colors.background};
+
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.3);
+
   animation: ${appear} 0.1s ease-out;
 
-  margin-bottom: 15px;
   border-radius: 6px;
-
-  display: flex;
-  flex-direction: column;
+  display: grid;
 `;
 
 export default function ThemePicker({ onHide }: Props) {
