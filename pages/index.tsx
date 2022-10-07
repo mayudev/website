@@ -32,7 +32,7 @@ export default function Home({ posts, projects }: Props) {
             currently learning Rust, Flutter and Kotlin.
           </p>
 
-          <p>{`I'm something of a Linux enthusiast, currently using Void NixOS with Sway (wayland!).`}</p>
+          <p>{`I'm something of a Linux enthusiast, currently using NixOS with Sway (wayland!).`}</p>
         </section>
         <section>
           <Heading>socials</Heading>
