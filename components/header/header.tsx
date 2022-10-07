@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled, { css, keyframes } from "styled-components";
 import { Avatar } from "./avatar";
 import Links from "./links";
@@ -67,7 +68,11 @@ export default function Header({ post }: { post: boolean }) {
   return (
     <Container>
       <span style={{ height: 96 }}>
-        <Avatar size={96} />
+        <Link href="/">
+          <a>
+            <Avatar size={96} />
+          </a>
+        </Link>
       </span>
 
       <Split>
