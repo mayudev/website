@@ -23,8 +23,8 @@ export default function Home({ posts, projects }: Props) {
           <p>{`Hi! I'm Mayu, an aspiring web developer.`}</p>
 
           <p>
-            My main interest <b>web development</b> and <b>mobile applications</b>, but I
-            sometimes work on various kind of things, like native applications.
+            My main interest is <b>web development</b> and <b>mobile applications</b>, but I
+            sometimes work on various kinds of things, like native applications.
           </p>
 
           <p>
